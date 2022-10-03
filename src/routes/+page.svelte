@@ -1,3 +1,19 @@
+<script lang="ts">
+  let carrouselIndex = 0;
+  const astros = [
+    { source: '/img/earth.png', href: '/earth' },
+    { source: '/img/moon.png', href: '/moon' },
+    { source: '/img/sun.png', href: '/sun' },
+  ];
+  const handleCarrousel = (direction: string) => {
+    if (direction === 'left') {
+      carrouselIndex = carrouselIndex > 0 ? carrouselIndex - 1 : 2;
+    } else {
+      carrouselIndex = carrouselIndex < 2 ? carrouselIndex + 1 : 0;
+    }
+  };
+</script>
+
 <svelte:head>
   <title>AstroMapped | SPACE APPS 2022</title>
   <meta
@@ -5,21 +21,6 @@
     content="Welcome to AstroMapped a place to explore space events on celestial bodies. At this moment the main focus is the Moon Quakes events."
   />
 </svelte:head>
-<script lang='ts'>
-  let carrouselIndex = 0
-  const astros = [
-      {source: '/img/earth.png', href: '/earth'}, 
-      {source: '/img/moon.png', href: '/moon'}, 
-      {source: '/img/sun.png', href: '/sun'}
-    ]
-  const handleCarrousel = (direction:string) => {
-    if (direction === "left") {
-      carrouselIndex = carrouselIndex > 0 ? carrouselIndex - 1 : 2;
-    } else {
-      carrouselIndex = carrouselIndex < 2 ? carrouselIndex + 1 : 0;
-    }
-  };
-</script>
 <main>
   <article>
     <header>
@@ -29,14 +30,17 @@
         events meassured and investigated all throughout our Solar System
       </p>
     </header>
-    <a href="/moon">GO TO MOON</a>
     <section>
-    <button class='arrow--left' on:click={() => handleCarrousel('left')}>Previous </button>
-      <a class='image_container' href={astros[carrouselIndex].href}>
-        <img src={astros[carrouselIndex].source} alt='earth'/>
+      <button class="arrow--left" on:click={() => handleCarrousel('left')}
+        >Previous
+      </button>
+      <a class="image_container" href={astros[carrouselIndex].href}>
+        <img src={astros[carrouselIndex].source} alt="earth" />
       </a>
-    <button class='arrow--right' on:click={() => handleCarrousel('right')}>Next</button>
-  </section>
+      <button class="arrow--right" on:click={() => handleCarrousel('right')}
+        >Next</button
+      >
+    </section>
   </article>
 </main>
 
@@ -135,10 +139,10 @@
     height: 100%;
   }
   .arrow--right {
-    right:10px
+    right: 10px;
   }
 
-  .arrow--left{
+  .arrow--left {
     left: 10px;
   }
 </style>
