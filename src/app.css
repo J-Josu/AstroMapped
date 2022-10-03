@@ -9,6 +9,9 @@
 :root {
   --background: hsl(255, 25%, 1%);
   --background-atenation: hsl(0, 0%, 0%, 0.5);
+  --accent-color: hsl(0, 0%, 98%);
+  --primary-color: hsl(0, 0%, 92.5%);
+  --secondary-color: hsl(0, 0%, 87.5%);
 }
 
 html {
@@ -19,11 +22,15 @@ body {
   width: 100vw;
   height: 100%;
   overflow-y: hidden;
+  color: var(--primary-color);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+body > div {
+  height: 100%;
 }
 
 .container-standar-GlobalStyle {
