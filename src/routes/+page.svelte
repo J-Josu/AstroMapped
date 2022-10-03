@@ -19,7 +19,6 @@
       carrouselIndex = carrouselIndex < 2 ? carrouselIndex + 1 : 0;
     }
   };
-  $: console.log(astros[carrouselIndex])
 </script>
 <main>
   <div class="container-standar-GlobalStyle">
@@ -33,11 +32,7 @@
       Aplicacion desarrollada en colaboracion co la UNLP, la NASA, y spaceApp
     </p>
     <br />
-    <a class="button-standar-GlobalStyle" href="/sun"
-      >Sun</a
-    >
     <section>
-      <a href='/earth'>click</a>
     <button class='arrow--left' on:click={() => handleCarrousel('left')}>Previous </button>
       <a class='image_container' href={astros[carrouselIndex].href}>
         <img src={astros[carrouselIndex].source} alt='earth'/>
