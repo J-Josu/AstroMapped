@@ -48,18 +48,6 @@ export function createMesh(radiusToOrigin: number, lat: number, lon: number, dep
   const profundity = depth * UNIT_TO_KM;
   const geo = depth > 0.1 ? new BoxGeometry(SIZE, SIZE, profundity) : geometry;
   const newQuake = new Mesh(geo, getMesh(type));
-  // newQuake.position.setFromSphericalCoords(
-  //   radiusToOrigin,
-  //   long,
-  //   lat,
-  //   // MathUtils.degToRad(lat - 270),
-  //   // MathUtils.degToRad(long - 270),
-  // );
-  // newQuake.position.setFromSphericalCoords(
-  //   radiusToOrigin,
-  //   (90-lat)*(Math.PI/180),
-  //   (lon+180)*(Math.PI/180),
-  // );
   const phi = (90 - lon) * (Math.PI / 180), theta = (lat + 180) * (Math.PI / 180);
   newQuake.position.set(
     -((radiusToOrigin - profundity / 2) * Math.sin(phi) * Math.cos(theta)),

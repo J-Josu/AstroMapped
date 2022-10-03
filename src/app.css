@@ -29,7 +29,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-body > div {
+
+body>div {
   height: 100%;
 }
 

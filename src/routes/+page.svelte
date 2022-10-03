@@ -11,16 +11,21 @@
     <header>
       <h1>Welcome to AstroMapped</h1>
       <p>
-        Aplicacion web dedicada a la dibulgacion cientifica de informacion sobre
-        los diferentes susesos, eventos o fenomenos naturales ocurridos en los
-        cuerpos celestes de nuestro sistema solar
+        An interactive web application for displaying data for a wide range of
+        events meassured and investigated all throughout our Solar System
       </p>
     </header>
-    <a href="/moon">Sun</a>
+    <a href="/moon">GO TO MOON</a>
   </article>
 </main>
 
 <style>
+  a,
+  a:any-link {
+    color: var(--primary-color);
+    margin-top: 2rem;
+    font-size: 4rem;
+  }
   main {
     height: 100vh;
     padding-inline: 1%;
