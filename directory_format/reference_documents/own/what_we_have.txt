@@ -1,0 +1,102 @@
+Stations
+    There are 4 stations -> Apollo 12, Apollo 14, Apollo 15, Apollo 16; all of which are situated on the Near side of Earth's Moon. 
+    There was also Apollo 11, which operated for only 21 days, data from Apollo 11 sometimes appears as if it was 12.
+    Another experiment was the LSPE, which was done on station 17 sometimes appears here too.
+-------------------------------------------------------
+Deep Moonquakes (DM) -> These are areas, not events
+    Locations: 
+            A: Identifier (there are some left here, that are present in "arrivals")
+            Side: N/F (Nearest/Furthest)
+            Latitude, Longitude, Depth: Coordinates, they have "error" columns if we want to specyfy that or take that in count for the animation
+    Arrivals: 
+            A: Identifier
+            12,14,15,16 P: P Waves data for each station (P waves are faster and go first, they travel through solid and liqud)
+            12,14,15,16 S: S Waves data for each station (S waves are weaker and go after, can't travel through liquid)
+
+
+Shallow Moonquakes (SM) -> 
+    Locations: 
+            Time: YYYY JJJ HH mm SS
+            Latitude, Longitude
+            Magnitude
+
+    Arrivals: One row for each station that perceived the moonquake, time is displayed once
+            Time: YYYY JJJ HHHH
+            Data for S Waves: 4 columns I dont understand yet and one for mean
+            Data for P Waves: 4 columns I dont understand yet and one for mean
+
+Meteoroids (M) -> Same format as Shallow Moonquakes, has no location .csv
+    Locations: 
+
+    Arrivals: 
+            Time: YYYY JJJ HHHHH
+            Data for S Waves: 4 columns I dont understand yet and one for mean
+            Data for P Waves: 4 columns I dont understand yet and one for mean
+
+Artificial Impact (AI) -> 
+    Locations: 
+            Time: YY JJJ HH mm .ss
+            Latitude, Longitude
+            Identifier
+
+    Arrivals: 
+            12, 14, 15, 16, 17: there's one row for every one of those numbers, and it's combination with T, D, S.
+            I don't understand it yet
+
+-------------------------------------------------------
+Final .csv's
+    We have to specify where we got our data and what does it represent
+    Every event (not including DM) has:
+            Time: YYYY JJJ HH mm ss(optional)
+                Starting time *** Provides main order
+                (Opt) ending time
+            Location:
+                Latitude (spherical)
+                Longitude (spherical)
+            ID: Ordinal + Event Type
+            Name: If event has a specified name (like meteorites or artificial impacts), then that's the name, else, name's equal to ID
+            Magnitude: Only for SM (¿Can we approximate magnitude from P and S?)
+            Stations Data: For each one we can manage to give S-Mean and P-Mean data
+                12
+                14
+                15
+                16
+                17 (Only for AI)
+-------------------------------------------------------
+    For DMs, we'll have a separate .csv that'll show DM Areas:
+        Location:
+            Latitude (spherical)
+            Longitude (spherical)
+            Depth (km)
+            X Error -> For each previous column we have an error one (same units), we can use that for providing radious to the point
+            Side F/N (Furthest and Nearest to Earth)
+        Mean P and S waves ¿magnitude? for each station:
+            12
+            14
+            15
+            16
+        ID (ORDINAL FROM ORIGINAL CSV)
+    *** We'll have some of them with no location, and some IDs will be left (for example, 45-48 are skipped in the ordinal ID sequence)
+-------------------------------------------------------
+lognonne CSV: 
+    changes made
+        To M 1976-Nov-14 (day was shown as 4, while other catalogues showed it as 14, every other field matched withother  catalogues)
+        A26 DM is  deprecated since there is a character leest on date format, and we weren't able to find any other DM clustered data available to check date failures
+        To M 1977-Apr-17 day was changed, since it was shown as 1977-04-71, all other catalogues showed it as 1977-04-17 (reason why whole event was not deprecated)
+    Type -> 
+        AI: Event Name
+        Meteoroid: M
+        Shallow Moonquake: SH
+        Major Deep Moonquake: A + Int
+    Lat -> Event Latitude 
+    Long -> Event  Longitude
+    Depth (km) -> Event Depth. Approximatedly:
+        0 for M and AI
+        < 100km for SH
+        Betweeen 700 & 1000 km for DM
+    Depth_err
+    Phi? Delta-a? Delta-b?
+    Da
+
+
+

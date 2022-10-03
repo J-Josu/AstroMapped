@@ -1,0 +1,73 @@
+Apollo Passive Seismic Experiment Long-Period Event Catalog
+in 80-Column Card-Format Text File
+
+Explanation of Catalog Entries - rev. 1008c
+
+Columns       Data
+-------       ---------------------------------------------------------
+
+ 3 - 4        Year
+
+ 6 - 8        Day of the year
+
+10 - 13       Signal start time in hours and minutes
+
+15 - 18       Signal stop time in hours and minutes; 9999 if the signal
+              continues to the next event
+
+20 - 35       Signal envelope amplitudes in mm measured on a standard
+              compressed-scale plot.  Z component is used for stations
+              11 and 12, and Y component is used for all the other
+              stations.  Standard compressed plot is produced by first
+              taking the absolute value of the difference between
+              consecutive long-period data points, summing them over
+              40 data points (approx. 6 s), and then plotting them at a
+              scale of 157 digital units/cm in alternating polarities
+              to give the appearance of a seismogram.  Four columns are
+              assigned to each of Apollo stations 12 (or 11), 14, 15
+              and 16.
+
+37 - 40       Availability of seismograms in expanded time scale:
+                1 = Calcomp incremental plotter plot
+                2 = Versatec matrix plotter plot
+              A single column is assigned to each of stations 12
+              (or 11), 14, 15 and 16.
+
+42 - 45       Data quality code (single column for each station):
+                1 = no data available for the station
+                2 = noisy data
+                3 = signal is masked by another, larger event
+                4 = compressed plot is clipped (original digital data
+                    may not be clipped)
+                5 = see comments
+                6 = the time recorded with the data is computer-
+                    generated, and thus is not exact
+
+47 - 76       Comments
+
+77            Event type:
+                A = classified (matching) deep moonquake
+                M = unclassified deep moonquake
+                C = meteoroid impact
+                H = shallow moonquake
+                Z = mostly short-period event
+                L = LM impact
+                S = S-IVB impact
+                X = special type
+
+78 - 80       Matching deep moonquake class
+
+--- Additional entries for levent.0704 ---
+
+82 - 85       New deep moonquake identification, July 2004
+                A = deep moonquake with assigned number
+                T = suspected long-period thermal moonquake with assigned number
+
+--- Additional entries for levent.1008 ---
+
+Deep moonquake events newly identified by Bulow et al. [JGR 110, E10003, doi:10.1029/2005JE02414, 2005; JGR 112, E09003, doi:10.1029/2006JE002847, 2007] have been added.
+
+For these events, columns 15-18 (signal stop time) are left blank and columns 20-35 (signal envelope amplitudes) contain -1. only to indicate at which station the signal was detected.
+
+--- Certain corrections were made to levent.1008, making a new version 1008c in December, 2018
+

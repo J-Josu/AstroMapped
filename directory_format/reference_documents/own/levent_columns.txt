@@ -1,0 +1,60 @@
+Y               Year          
+
+JD              Julian Day        
+
+S               HHmm Start
+
+E               HHmm End (9999 if interrupted w/ other)
+
+A1-4            
+
+P1-4            Availability of seismograms in expanded time scale:
+                            1 = Calcomp incremental plotter plot
+                            2 = Versatec matrix plotter plot
+                Para las 4 estaciones (11 y 12 en una misma columna)
+
+Q1-4            Data quality code (single column for each station):
+                    1 = no data available for the station
+                    2 = noisy data
+                    3 = signal is masked by another, larger event
+                    4 = compressed plot is clipped (original digital data
+                        may not be clipped)
+                    5 = see comments
+                    6 = the time recorded with the data is computer-
+                        generated, and thus is not exact
+
+COMMENTS        Might be useful for annotations and clustering
+
+T1-2            Event type:
+                    A = classified (matching) deep moonquake
+                    M = unclassified deep moonquake
+                    C = meteoroid impact
+                    H = shallow moonquake
+                    Z = mostly short-period event
+                    L = LM impact
+                    S = S-IVB impact
+                    X = special type
+                Seems like:
+                    1-2 match, except for M-A or null-A ;
+                    second column has null only on null-null situations, and that has no M (al final si hay, pero menos) ;
+                    2 is an update for 1
+
+N1-2            Matching Deep Moonquake Class (a 0-? number, one for each T column)
+
+Grade           
+
+Traces          
+
+12LPX-Z-Y       
+
+14LPX-Z-Y       
+
+14SPZ           
+
+15LPX-Z-Y       
+
+15SPZ           
+
+16LPX-Z-Y       
+
+16SPZ           
